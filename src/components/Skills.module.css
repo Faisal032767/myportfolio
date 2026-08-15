@@ -1,0 +1,86 @@
+.section {
+  position: relative;
+  z-index: 1;
+  background: var(--dark2);
+}
+
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 100px 5%;
+}
+
+.header { margin-bottom: 64px; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--cyan);
+  margin-bottom: 10px;
+}
+
+.title {
+  font-family: var(--display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.title span { color: var(--cyan); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 28px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  border-color: rgba(0, 245, 255, 0.4);
+  box-shadow: 0 0 30px rgba(0, 245, 255, 0.08);
+}
+
+.cardTitle {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: var(--amber);
+  margin-bottom: 20px;
+}
+
+.barItem { margin-bottom: 16px; }
+
+.barLabel {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: #cdd0da;
+  margin-bottom: 6px;
+}
+
+.barTrack {
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+/* .barFill width is driven by JS via the .skill-fill class */
+.barFill {
+  height: 100%;
+  width: 0%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--cyan), var(--magenta));
+  transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}

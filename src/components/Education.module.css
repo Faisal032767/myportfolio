@@ -1,0 +1,203 @@
+.section {
+  position: relative;
+  z-index: 1;
+  background: var(--dark2);
+}
+
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 100px 5%;
+}
+
+.header { margin-bottom: 64px; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--cyan);
+  margin-bottom: 10px;
+}
+
+.title {
+  font-family: var(--display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.title span { color: var(--cyan); }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+/* Education Cards */
+.eduCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.eduCard::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyan), var(--magenta));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.eduCard:hover::after { transform: scaleX(1); }
+.eduCard:hover {
+  border-color: rgba(0, 245, 255, 0.3);
+  box-shadow: 0 0 28px rgba(0, 245, 255, 0.07);
+}
+
+.eduIcon {
+  font-size: 1.4rem;
+  width: 44px; height: 44px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(0,245,255,0.1), rgba(255,45,120,0.1));
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.degree {
+  font-family: var(--display);
+  font-size: 1.6rem;
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+
+.institution {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--cyan);
+  letter-spacing: 0.15em;
+  margin-top: 6px;
+}
+
+.year {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-top: 6px;
+}
+
+.score {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  padding: 4px 14px;
+  border-radius: 20px;
+  background: rgba(255,184,0,0.08);
+  border: 1px solid rgba(255,184,0,0.25);
+  color: var(--amber);
+  letter-spacing: 0.1em;
+}
+
+/* Languages */
+.langBlock { margin-top: 8px; }
+
+.blockLabel {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  color: var(--amber);
+  margin-bottom: 14px;
+}
+
+.langBadges { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.langBadge {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  padding: 6px 14px;
+  border-radius: 20px;
+  animation: badgeGlow 2s ease-in-out infinite alternate;
+}
+.primary {
+  background: rgba(0, 245, 255, 0.1);
+  border: 1px solid rgba(0, 245, 255, 0.4);
+  color: var(--cyan);
+}
+.secondary {
+  background: rgba(255, 184, 0, 0.08);
+  border: 1px solid rgba(255, 184, 0, 0.3);
+  color: var(--amber);
+}
+
+@keyframes badgeGlow {
+  from { box-shadow: none; }
+  to   { box-shadow: 0 0 14px rgba(0, 245, 255, 0.2); }
+}
+
+/* Certifications */
+.rightCol { display: flex; flex-direction: column; gap: 0; }
+
+.certList { display: flex; flex-direction: column; gap: 14px; }
+
+.certItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.certItem:hover {
+  border-color: var(--cyan);
+  transform: translateX(6px);
+}
+
+.certDot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+.certText { flex: 1; }
+
+.certTitle {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: #cdd0da;
+  letter-spacing: 0.08em;
+}
+
+.certInstitute {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  font-family: var(--mono);
+  margin-top: 3px;
+}
+
+.certYear {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}

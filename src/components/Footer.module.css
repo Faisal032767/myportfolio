@@ -1,0 +1,13 @@
+.footer {
+  text-align: center;
+  padding: 40px 5%;
+  border-top: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  letter-spacing: 0.15em;
+  position: relative;
+  z-index: 1;
+}
+
+.name { color: var(--cyan); }

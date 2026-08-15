@@ -1,0 +1,120 @@
+.section {
+  position: relative;
+  z-index: 1;
+}
+
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 100px 5%;
+}
+
+.header { margin-bottom: 64px; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--cyan);
+  margin-bottom: 10px;
+}
+
+.title {
+  font-family: var(--display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.title span { color: var(--cyan); }
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--cyan), var(--magenta), transparent);
+}
+
+.item {
+  position: relative;
+  margin-bottom: 52px;
+}
+
+.dot {
+  position: absolute;
+  left: -39px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--dark);
+  border: 2px solid var(--cyan);
+  box-shadow: 0 0 12px var(--cyan);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+.date {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--amber);
+  margin-bottom: 8px;
+}
+
+.role {
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+
+.company {
+  font-family: var(--mono);
+  color: var(--cyan);
+  font-size: 0.78rem;
+  margin-top: 4px;
+  letter-spacing: 0.12em;
+}
+
+.desc {
+  margin-top: 14px;
+  color: var(--text-dim);
+  line-height: 1.8;
+  font-size: 0.9rem;
+}
+
+.list {
+  margin-top: 12px;
+  padding-left: 18px;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  line-height: 1.85;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  border-radius: 2px;
+  background: rgba(0, 245, 255, 0.06);
+  border: 1px solid rgba(0, 245, 255, 0.2);
+  color: var(--cyan);
+}
+
+@keyframes pulseDot {
+  0%, 100% { box-shadow: 0 0 8px var(--cyan); }
+  50%       { box-shadow: 0 0 18px var(--cyan), 0 0 30px var(--cyan); }
+}
