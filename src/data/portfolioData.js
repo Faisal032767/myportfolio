@@ -34,20 +34,23 @@ export const experience = [
 export const projects = [
   {
     id: '01',
+
+  title: 'NEXORA',
+  subtitle: 'Secure Digital Platform',
+  description:
+    'A modern full-stack web application with responsive React interfaces, Spring Security with JWT-based authentication, role-based access control, protected user and admin routes, user CRUD management, profile management, and an interactive admin dashboard.',
+  tags: ['React', 'JavaScript', 'Spring Boot', 'Spring Security', 'JWT', 'Supabase'],
+},
+  {
+    id: '02',
     title: 'BOOTCAMP',
     subtitle: 'Learning Platform',
     description:
       'A full-featured web-based learning platform built with Spring Boot and Java. Features a dynamic course catalog, role-based access control differentiating Students from Admins, and secure course material access post-purchase. Backed by Hibernate/JPA and MySQL.',
     tags: ['Spring Boot', 'Java', 'Hibernate', 'MySQL', 'RBAC'],
   },
-  {
-    id: '02',
-    title: 'BOOKWORM',
-    subtitle: 'Community Reading Platform',
-    description:
-      'A digital library web application for community readers. Implemented book categorization and inventory management, efficient data persistence with Hibernate (JPA) and MySQL, and fast retrieval for large library databases.',
-    tags: ['Java', 'Spring Boot', 'JPA', 'MySQL', 'Library Mgmt'],
-  },
+
+  
   {
     id: '03',
     title: 'LC AUTOMATION',
